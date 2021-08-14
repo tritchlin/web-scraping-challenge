@@ -38,6 +38,9 @@ def scrape_image():
     featured_image = browser.links.find_by_partial_href('featured')
     featured_image_url = featured_image["href"]
 
+    browser.quit()
+    return (featured_image_url)
+
 def scrape_facts():
     # init browser
     executable_path = {'executable_path': ChromeDriverManager().install()}
@@ -45,15 +48,14 @@ def scrape_facts():
 
     url = 'https://galaxyfacts-mars.com/' 
     tables = pd.read_html(url)
-    tables[1]
-    mars_facts = pd.DataFrame(tables[1])
-    html_table = mars_facts.to_html()
-
-    # table with Mars facts
-    html_cleaned = html_table.replace('\n', '') 
+    tables[0]
+    mars_facts = pd.DataFrame(tables[0])
+    facts_noheader = mars_facts.rename(columns=mars_facts.iloc[0]).drop(mars_facts.index[0])
+    html_table = facts_noheader.to_html()
+    # html_cleaned = html_table.replace('\n', '') 
 
     browser.quit()
-    return (html_cleaned)
+    return (html_table)
 
 def scrape_hemis():
     # init browser

@@ -17,14 +17,67 @@
       <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
     </div>
 
-    <!-- Phone Listings -->
-    <div class="row" id="phone-listings">
+    <!-- Mars News -->
+    <div class="row" id="latest-news">
       <div class="col-md-12">
-        <h4 class="heading">{{mars.news.title}}</small>
+        <h2 class="heading">Latest Mars News</small>
+        <h4 class="heading">{{mars.news.title}}</small></h4>
+        <body>{{mars.news.body}}</body>
       </div>
     </div>
 
-  </div>
+    <div class="row" id="images-facts">
+      <div class="col-md-6">
+        <h2 class="heading">Featured Mars Image</small></h2>
+        <img src="{{mars.image}}"></img>
+      </div>
+      <div class="col-md-6">
+        <h3 class="heading">Mars Facts</small></h3>
+        <br>{{mars.facts}}</br>
+      </div>
+    </div>
+
+    <div class="row" id="hemispheres">
+      <div class="col-md-12">
+        <h2 class="heading">Mars Hemispheres</small></h2>
+      </div>
+    </div>
+<!-- 
+    <div class="row" id="hemisphere-cards">
+      <div class="col-md-3">
+        <div class="card" style="width: 18rem;">
+          <img src="{{mars.hemis.img_url}}" class="card-img-top" alt="{{mars.hemis.title}}">
+          <div class="card-body">
+            <p class="card-text">{{mars.hemis.title}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card" style="width: 18rem;">
+          <img src="{{mars.hemis.img_url}}" class="card-img-top" alt="{{mars.hemis.title}}">
+          <div class="card-body">
+            <p class="card-text">{{mars.hemis.title}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card" style="width: 18rem;">
+          <img src="{{mars.hemis.img_url}}" class="card-img-top" alt="{{mars.hemis.title}}">
+          <div class="card-body">
+            <p class="card-text">{{mars.hemis.title}}</p>
+          </div>
+        </div>
+      </div>
+    <div class="col-md-3">
+      <div class="card" style="width: 18rem;">
+        <img src="{{mars.hemis.img_url}}" class="card-img-top" alt="{{mars.hemis.title}}">
+        <div class="card-body">
+          <p class="card-text">{{mars.hemis.title}}</p>
+        </div>
+      </div>
+     </div>
+  </div> -->
+
 </body>
 
 </html>
