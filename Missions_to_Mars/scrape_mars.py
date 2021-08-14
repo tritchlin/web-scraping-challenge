@@ -79,13 +79,11 @@ def scrape_hemis():
         html = browser.html
         soup = BeautifulSoup(html, "html.parser")
 
-        desc = soup.find('dl')
-        img_partial = desc.find('a')['href']
+        desc = soup.find(class_='wide-image')['src']
 
         title = soup.find('h2').get_text()
-        img_url = base_url + img_partial
+        img_url = base_url + desc
 
-        # dictionary containing Mars hemisphere images and titles (x4)
         hemisphere_image_urls.append({"title": title, "img_url": img_url})
         
     browser.quit()
